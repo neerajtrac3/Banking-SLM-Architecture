@@ -2,7 +2,6 @@
 
 BankingSLM is a domain‑specific Small Language Model designed for regulated financial services environments. The model supports secure, compliant, and context‑aware AI capabilities across lending, payments, risk, compliance, and operations. This repository documents the architecture, design components, evaluation framework, and governance model used to operationalize BankingSLM at enterprise scale.
 
-# Banking SLM Architecture
 
 This repository documents the reference architecture, evaluation approach, and use cases for a domain-specific Small Language Model (SLM) for banking.
 
