@@ -1,1 +1,226 @@
+{
+  "ontology_name": "BankingSLM_Ontology",
+  "version": "1.0.0",
+  "domain": "Retail & Corporate Banking",
+  "entities": [
+    {
+      "name": "Customer",
+      "type": "core",
+      "description": "A person or organization that holds one or more accounts with the bank.",
+      "attributes": [
+        "customer_id",
+        "customer_type",
+        "name",
+        "date_of_birth",
+        "kyc_status",
+        "risk_rating",
+        "residency_country",
+        "segment"
+      ]
+    },
+    {
+      "name": "Account",
+      "type": "core",
+      "description": "A financial account held by a customer at the bank.",
+      "attributes": [
+        "account_id",
+        "account_type",
+        "currency",
+        "status",
+        "open_date",
+        "close_date",
+        "available_balance",
+        "ledger_balance"
+      ]
+    },
+    {
+      "name": "Transaction",
+      "type": "core",
+      "description": "A financial movement of funds between accounts or parties.",
+      "attributes": [
+        "transaction_id",
+        "transaction_type",
+        "amount",
+        "currency",
+        "value_date",
+        "booking_date",
+        "channel",
+        "direction",
+        "status",
+        "iso20022_message_type"
+      ]
+    },
+    {
+      "name": "PaymentInstruction",
+      "type": "payments",
+      "description": "An instruction to move funds, often represented as an ISO 20022 message.",
+      "attributes": [
+        "instruction_id",
+        "scheme",
+        "iso20022_message_type",
+        "debtor_account",
+        "creditor_account",
+        "debtor_agent",
+        "creditor_agent",
+        "end_to_end_id",
+        "purpose_code",
+        "regulatory_reporting"
+      ]
+    },
+    {
+      "name": "Counterparty",
+      "type": "risk",
+      "description": "The other party involved in a transaction or relationship.",
+      "attributes": [
+        "counterparty_id",
+        "name",
+        "jurisdiction",
+        "risk_category",
+        "sanctions_status"
+      ]
+    },
+    {
+      "name": "Event",
+      "type": "operational",
+      "description": "A significant occurrence in the lifecycle of an account, transaction, or customer.",
+      "attributes": [
+        "event_id",
+        "event_type",
+        "event_timestamp",
+        "source_system",
+        "severity",
+        "description"
+      ]
+    },
+    {
+      "name": "Exception",
+      "type": "operational",
+      "description": "An error or deviation from expected processing in payments or core banking.",
+      "attributes": [
+        "exception_id",
+        "exception_type",
+        "code",
+        "description",
+        "detected_at_stage",
+        "resolution_status"
+      ]
+    },
+    {
+      "name": "RegulatoryRule",
+      "type": "compliance",
+      "description": "A rule derived from regulation that constrains or guides system behavior.",
+      "attributes": [
+        "rule_id",
+        "jurisdiction",
+        "regulation_name",
+        "article_reference",
+        "obligation_type",
+        "applicability_scope",
+        "effective_date"
+      ]
+    },
+    {
+      "name": "RiskIndicator",
+      "type": "risk",
+      "description": "A signal or feature used to assess financial crime, credit, or operational risk.",
+      "attributes": [
+        "indicator_id",
+        "indicator_type",
+        "description",
+        "severity_level",
+        "detection_logic",
+        "related_entities"
+      ]
+    },
+    {
+      "name": "LegacyComponent",
+      "type": "technology",
+      "description": "A legacy system component such as a COBOL or Assembler module.",
+      "attributes": [
+        "component_id",
+        "system_name",
+        "language",
+        "module_name",
+        "interface_points",
+        "criticality_level"
+      ]
+    }
+  ],
+  "relationships": [
+    {
+      "name": "Customer-Owns-Account",
+      "from": "Customer",
+      "to": "Account",
+      "cardinality": "1-to-many",
+      "description": "A customer may own one or more accounts."
+    },
+    {
+      "name": "Account-Has-Transaction",
+      "from": "Account",
+      "to": "Transaction",
+      "cardinality": "1-to-many",
+      "description": "An account can have many transactions."
+    },
+    {
+      "name": "Transaction-Has-Counterparty",
+      "from": "Transaction",
+      "to": "Counterparty",
+      "cardinality": "many-to-one",
+      "description": "A transaction may involve a counterparty."
+    },
+    {
+      "name": "Transaction-Generates-Event",
+      "from": "Transaction",
+      "to": "Event",
+      "cardinality": "1-to-many",
+      "description": "A transaction can generate one or more operational events."
+    },
+    {
+      "name": "Transaction-Has-Exception",
+      "from": "Transaction",
+      "to": "Exception",
+      "cardinality": "0-to-many",
+      "description": "A transaction may have associated processing exceptions."
+    },
+    {
+      "name": "RegulatoryRule-AppliesTo-Transaction",
+      "from": "RegulatoryRule",
+      "to": "Transaction",
+      "cardinality": "many-to-many",
+      "description": "Regulatory rules apply to specific transaction types or flows."
+    },
+    {
+      "name": "RiskIndicator-Flags-Transaction",
+      "from": "RiskIndicator",
+      "to": "Transaction",
+      "cardinality": "many-to-many",
+      "description": "Risk indicators can flag transactions as suspicious or high risk."
+    },
+    {
+      "name": "LegacyComponent-Processes-Transaction",
+      "from": "LegacyComponent",
+      "to": "Transaction",
+      "cardinality": "many-to-many",
+      "description": "Legacy components participate in processing specific transaction flows."
+    },
+    {
+      "name": "RegulatoryRule-Defines-RiskIndicator",
+      "from": "RegulatoryRule",
+      "to": "RiskIndicator",
+      "cardinality": "1-to-many",
+      "description": "Regulatory rules may define or require specific risk indicators."
+    }
+  ],
+  "semantic_mappings": {
+    "iso20022": {
+      "pacs.008": {
+        "CdtTrfTxInf/DbtrAcct/Id/IBAN": "Account.account_id",
+        "CdtTrfTxInf/CdtrAcct/Id/IBAN": "Account.account_id",
+        "CdtTrfTxInf/IntrBkSttlmAmt": "Transaction.amount",
+        "CdtTrfTxInf/ChrgBr": "Transaction.transaction_type",
+        "CdtTrfTxInf/RmtInf/Ustrd": "Transaction.description"
+      }
+    }
+  }
+}
 
