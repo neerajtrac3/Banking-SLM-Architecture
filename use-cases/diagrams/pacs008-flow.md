@@ -8,4 +8,4 @@ flowchart TD
     D --> E[Composite Risk Score (RSS)]
     E --> F[Explainability Layer]
     F --> G[Decision Recommendation<br/>(Approve / Review / Block)]
-
+```
