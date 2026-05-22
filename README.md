@@ -3,7 +3,7 @@
 **Authored by: Neeraj Aggarwal — AI Architecture & Modernization Leader**
 
 <p align="center">
-  <img src="https://img.shields.io/badge/Domain_Specific_AI-Banking_SML_Architecture-blue?style=for-the-badge">
+  <img src="https://img.shields.io/badge/Domain_Specific_AI-Banking_SLM_Architecture-blue?style=for-the-badge">
 </p>
 
 ---
