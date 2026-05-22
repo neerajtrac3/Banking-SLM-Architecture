@@ -142,7 +142,6 @@ flowchart TD
     F --> G[Evaluation Framework]
 
 
-
 ## Objectives
 
 - Define an architecture for banking-focused SLMs
@@ -167,6 +166,7 @@ flowchart TD
 ---
 
 ## Architecture Overview
+
 
 ```mermaid
 flowchart LR
