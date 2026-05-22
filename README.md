@@ -66,28 +66,6 @@ General-purpose LLMs are unsafe for banking because they:
 - lack legacy system context  
 - introduce operational and compliance risk  
 
-# 🔍 Why Banking Needs SLMs
-
-General-purpose LLMs are unsafe for banking because they:
-
-- hallucinate regulatory content  
-- misinterpret ISO 20022 semantics  
-- cannot explain decisions  
-- violate auditability requirements  
-- lack legacy system context  
-- introduce operational and compliance risk  
-
-# 🔍 Why Banking Needs SLMs
-
-General-purpose LLMs are unsafe for banking because they:
-
-- hallucinate regulatory content  
-- misinterpret ISO 20022 semantics  
-- cannot explain decisions  
-- violate auditability requirements  
-- lack legacy system context  
-- introduce operational and compliance risk  
-
 BankingSLM solves these challenges by providing:
 
 - deterministic outputs  
