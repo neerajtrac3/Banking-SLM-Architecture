@@ -58,8 +58,6 @@ This repository provides the **architecture blueprint** for that.
 
 ---
 
-# 🏆 Your Contribution (Original Contribution of Major Significance)
-
 This repository documents the architecture I created for:
 
 - Infosys Topaz COE (AI Architecture & Innovation)  
