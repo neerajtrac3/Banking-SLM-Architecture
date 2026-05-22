@@ -55,6 +55,48 @@ Banks need **domain‑specific AI**, not general AI.
 This repository provides the **architecture blueprint** for that.
 
 ---
+# 🔍 Why Banking Needs SLMs
+
+General-purpose LLMs are unsafe for banking because they:
+
+- hallucinate regulatory content  
+- misinterpret ISO 20022 semantics  
+- cannot explain decisions  
+- violate auditability requirements  
+- lack legacy system context  
+- introduce operational and compliance risk  
+
+# 🔍 Why Banking Needs SLMs
+
+General-purpose LLMs are unsafe for banking because they:
+
+- hallucinate regulatory content  
+- misinterpret ISO 20022 semantics  
+- cannot explain decisions  
+- violate auditability requirements  
+- lack legacy system context  
+- introduce operational and compliance risk  
+
+# 🔍 Why Banking Needs SLMs
+
+General-purpose LLMs are unsafe for banking because they:
+
+- hallucinate regulatory content  
+- misinterpret ISO 20022 semantics  
+- cannot explain decisions  
+- violate auditability requirements  
+- lack legacy system context  
+- introduce operational and compliance risk  
+
+BankingSLM solves these challenges by providing:
+
+- deterministic outputs  
+- domain‑specific semantics  
+- explainability and lineage  
+- regulatory alignment  
+- low hallucination  
+- safe deployment in Tier‑0/Tier‑1 systems  
+
 
 This repository documents the architecture I created for:
 
@@ -77,6 +119,73 @@ My contributions include:
 This architecture is referenced in multiple **DOI‑indexed research papers**, strengthening EB‑1A authorship and original contribution criteria.
 
 ---
+# 🧠 Key Innovations Introduced
+
+BankingSLM introduces several innovations not found in general-purpose LLMs:
+
+- Banking‑native tokenizer  
+- ISO 20022 semantic embedding layer  
+- Banking ontology graph  
+- Risk‑aware decoding  
+- Compliance‑aligned guardrails  
+- Banking‑specific evaluation metrics  
+- Legacy system semantic mapping (COBOL/Assembler)  
+- Governance integration aligned with UAGB  
+
+### 🔹 Data Layer  
+### 🔹 Tokenization Layer  
+### 🔹 Embedding Layer  
+### 🔹 Ontology Layer  
+### 🔹 RAG Layer  
+### 🔹 SML Core  
+### 🔹 Guardrails  
+### 🔹 Evaluation Framework  
+
+
+# 🏦 Banking Use Cases Enabled by BankingSLM
+
+### ✔ Payments  
+- ISO 20022 message interpretation  
+- Exception handling  
+- Fraud pattern reasoning  
+
+### ✔ Lending  
+- Credit policy interpretation  
+- Document intelligence  
+- Underwriting assistance  
+
+### ✔ Compliance  
+- AML/KYC reasoning  
+- Regulatory text interpretation  
+- Explainable decisioning  
+
+### ✔ Core Banking  
+- COBOL/Assembler code interpretation  
+- Legacy → AI modernization  
+- Batch dependency analysis  
+
+
+# 📚 Research References
+
+BankingSLM architecture is referenced in the following DOI‑indexed publications:
+
+- UAMMF — DOI: 10.2139/ssrn.6131966  
+- ERMI — DOI: 10.5281/zenodo.18500495  
+- UICS — DOI: 10.5281/zenodo.18381578  
+- AI‑Ready Payments — DOI: 10.5281/zenodo.18748377  
+- ISO 20022 Complexity — DOI: 10.5281/zenodo.19923754  
+- AI‑Native Core Banking — DOI: 10.5281/zenodo.18363566  
+
+# 🏛️ Critical Role Evidence
+
+BankingSLM architecture is part of my critical contributions to:
+
+- Infosys Topaz COE — AI Architecture Lead  
+- State Street — Enterprise Delivery & Governance  
+- BIAN — Contributor to global banking standards  
+- Fintech Modernization — Chief Editor  
+
+
 
 # 🏗️ Architecture Overview
 
@@ -127,6 +236,35 @@ This architecture is referenced in multiple **DOI‑indexed research papers**, s
 - Regulatory correctness  
 - Risk‑aware scoring  
 - ISO 20022 compliance  
+
+# 📂 How to Use This Repository
+
+- `architecture/` — Core SML architecture and diagrams  
+- `evaluation/` — Metrics, test design, and evaluation framework  
+- `prompt-flows/` — Task‑specific prompt flows  
+- `use-cases/` — Applied banking scenarios  
+- `model-cards/` — Model documentation and governance  
+
+# 📚 Research References
+
+BankingSLM architecture is referenced in the following DOI‑indexed publications:
+
+- UAMMF — DOI: 10.2139/ssrn.6131966  
+- ERMI — DOI: 10.5281/zenodo.18500495  
+- UICS — DOI: 10.5281/zenodo.18381578  
+- AI‑Ready Payments — DOI: 10.5281/zenodo.18748377  
+- ISO 20022 Complexity — DOI: 10.5281/zenodo.19923754  
+- AI‑Native Core Banking — DOI: 10.5281/zenodo.18363566  
+
+
+# 🚀 Future Enhancements
+
+- Banking ontology v2  
+- ISO 20022 semantic graph expansion  
+- Risk‑aware decoding v2  
+- Model lineage dashboard  
+- Evaluation dataset release  
+
 
 ---
 
