@@ -1,1 +1,65 @@
+{
+  "version": "1.0.0",
+  "description": "Risk scoring matrix for BankingSLM across payments, AML/KYC, fraud, compliance, legacy systems, and operational domains.",
+  "scoring_scale": {
+    "1": "Very Low",
+    "2": "Low",
+    "3": "Medium",
+    "4": "High",
+    "5": "Critical"
+  },
+  "domains": {
+    "payments": [
+      "high_risk_jurisdiction",
+      "unusual_amount",
+      "missing_iso20022_fields",
+      "velocity_anomaly",
+      "counterparty_mismatch",
+      "purpose_code_inconsistency"
+    ],
+    "aml_kyc": [
+      "pep_involvement",
+      "sanctions_match",
+      "beneficial_owner_risk",
+      "unclear_source_of_funds",
+      "customer_risk_rating"
+    ],
+    "fraud": [
+      "behavioral_anomaly",
+      "device_channel_mismatch",
+      "compromised_credentials",
+      "high_risk_merchant",
+      "synthetic_identity_signals"
+    ],
+    "compliance": [
+      "regulatory_violation",
+      "missing_audit_trail",
+      "explainability_failure",
+      "pii_leakage",
+      "incorrect_classification"
+    ],
+    "legacy_system": [
+      "unsupported_code_path",
+      "batch_dependency_risk",
+      "data_quality_issue",
+      "interface_mismatch",
+      "critical_module_involvement"
+    ],
+    "operational": [
+      "system_outage_indicator",
+      "duplicate_transaction",
+      "reconciliation_mismatch",
+      "settlement_failure",
+      "exception_escalation"
+    ]
+  },
+  "composite_score_formula": "RSS = (payments + aml_kyc + fraud + compliance + legacy_system + operational) / 6",
+  "risk_bands": {
+    "very_low": "1.0 - 1.9",
+    "low": "2.0 - 2.9",
+    "medium": "3.0 - 3.9",
+    "high": "4.0 - 4.4",
+    "critical": "4.5 - 5.0"
+  }
+}
 
